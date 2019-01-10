@@ -1,43 +1,85 @@
 var connection = require("./connection.js");
 
+function printQuestionMarks(num)
+{
+    var arr = [];
+    for(var i=0;i<num;i++)
+    {
+        arr.push("?");
+    }
+    return(arr.toString());
+}
+
+
+function objToSql(ob) {
+    var arr = [];
+  
+    // loop through the keys and push the key/value as a string int arr
+    for (var key in ob) {
+      var value = ob[key];
+      // check to skip hidden properties
+      if (Object.hasOwnProperty.call(ob, key)) {
+        // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+        if (typeof value === "string" && value.indexOf(" ") >= 0) {
+          value = "'" + value + "'";
+        }
+        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+        // e.g. {sleepy: true} => ["sleepy=true"]
+        arr.push(key + "=" + value);
+      }
+    }
+  
+    // translate array of strings to a single comma-separated string
+    return arr.toString();
+  }
 var orm = {
-    selectAll: function (tableinput) {
-        var queryString = "SELECT * from ??";
-        var query = connection.query(queryString, [tableinput],
-            function (err, result) {
+    selectAll: function (tableinput,cb) {
+        var queryString = "SELECT * FROM " +tableinput + ";";
+         connection.query(queryString, function (err, result) {
 
-                if (err) throw err;
+                if (err){
+                    throw err;
+                } 
 
-                console.log("BASE QUERY:", queryString);
-                console.log("BUILT QUERY:", query.sql);
-                console.log("QUERY RESULT:", result);
-            }
-        );
-    },
-
-    insertOne: function (tableInput,col2, col3) {
-        var queryString = "INSERT into ?? values(??,??)";
-        var query = connection.query(queryString, [tableInput,col2, col3],
-            function (err, result) {
-                if (err) throw err;
-
-                console.log("BASE QUERY:", queryString);
-                console.log("BUILT QUERY:", query.sql);
-                console.log("QUERY RESULT:", result);
+                cb(result);
             });
     },
 
-    updateone: function (tableinput, colToUpdate, valToUpdate, colToSearch, valOfCol) {
-        var queryString = "UPDATE ?? set ?? = ? where ?? = ? ";
-        var query = connection.query(queryString, [tableinput, colToUpdate, valToUpdate, colToSearch, valOfCol], function (err, result) {
-            if (err) throw err;
+    insertOne: function (tableInput,cols,vals,cb) {
+        var queryString = "INSERT INTO " +tableInput;
+        queryString += "(";
+        queryString += cols.toString();
+        queryString += ")";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals);
+        queryString += ")";
+        console.log(queryString);
+        connection.query(queryString,vals ,
+            function (err, result) {
+                if (err){
+                    throw err;
+                } 
 
-            console.log("BASE QUERY :", queryString);
-            console.log("BUILT QUERY:", query.sql);
-            console.log("QUERY RESULT:", result);
+                cb(result);
+            });
+    },
 
+    updateone: function(table, objColVals, condition, cb) {
+        var queryString = "UPDATE " + table;
+    
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+    
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
         });
-
-    }
-};
+      }
+    };
 module.export = orm;
