@@ -1,0 +1,6 @@
+1. Fix orm.js
+2. Script burger.js
+3. Instruction 4 for controller setup
+4. last 3 instructions of view setup
+5. Get a burger image for free and put it in the img folder
+6. Watch the video and code
