@@ -1,5 +1,5 @@
 var express = require("express");
-<<<<<<< HEAD
+
 var router = express.router();
 var burger = require("./models/burger.js");
 
@@ -42,14 +42,4 @@ router.put("/api/burgers/:id", function (req, res) {
 
 module.exports = router;
 
-=======
 
-var router = express
-
-var burger = require("./models/burger.js");
-
-router.length("/",function(req,res){
-    burger.
-
-})
->>>>>>> 0fb0bd60614b730416f93757bdc682c7ae74b252
