@@ -3,7 +3,7 @@ var mysql = require("mysql");
 var connection = mysql.createConnection({
 host:"localhost",
 port:3306,
-User:"root",
+user:"root",
 password: "rootroot",
 database:"burgers_db"
 });
@@ -13,7 +13,7 @@ if(err){
 console.error("error connecting:" + err.stack);
 return;
 }
-console.log("Connected as id: " + connection.threadid);
+console.log("Connected as id: " + connection.threadId);
 });
 
 module.export = connection;
