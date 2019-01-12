@@ -2,21 +2,21 @@
 
 <h2>Burgers that are not devoured</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#unless Devoured}}
-    {{>burgers/burger-block Devoured=true}}
+<ul id = "noDevoured">
+    {{#each burger}}
+    {{#unless devoured}}
+    {{>burgers/burger-block devoured=false}}
     {{/unless}}
     {{/each}}
 </ul>
 
 <h2> Burgers that are Devoured</h2>
 
-<img src = "../public/assets/img/burger.png.jpg" alt ="Burger Image">
-<ul>
-    {{#each burgers}}
-    {{#if Devoured}}
-    {{>burgers/burger-block Devoured=flase}}
+
+<ul id = "Devoured">
+    {{#each burger}}
+    {{#if devoured}}
+    {{>burgers/burger-block devoured=true}}
     {{/if}}
     {{/each}}
 </ul>

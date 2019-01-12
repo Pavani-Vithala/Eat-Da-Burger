@@ -16,4 +16,21 @@ li {
   
   .form-group {
     margin-bottom: 5px;
+    float : left
   }
+
+ #notDevoured{
+   float: left;
+   padding: 20px;
+ }
+ #Devoured{
+  float: left;
+  padding: 20px;
+}
+
+.img{
+margin: 20px;
+width:400px;
+height:400px;
+
+}
