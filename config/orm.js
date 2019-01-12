@@ -33,7 +33,7 @@ function objToSql(ob) {
     return arr.toString();
   }
 var orm = {
-    selectAll: function (tableinput,cb) {
+    all: function (tableinput,cb) {
         var queryString = "SELECT * FROM " +tableinput + ";";
          connection.query(queryString, function (err, result) {
 
@@ -45,7 +45,7 @@ var orm = {
             });
     },
 
-    insertOne: function (tableInput,cols,vals,cb) {
+    create: function (tableInput,cols,vals,cb) {
         var queryString = "INSERT INTO " +tableInput;
         queryString += "(";
         queryString += cols.toString();
@@ -64,7 +64,7 @@ var orm = {
             });
     },
 
-    updateone: function(table, objColVals, condition, cb) {
+    update: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
     
         queryString += " SET ";
