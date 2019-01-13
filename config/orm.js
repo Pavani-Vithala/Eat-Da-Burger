@@ -1,3 +1,4 @@
+//Import MYSQL COnnection
 var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
@@ -31,9 +32,9 @@ function objToSql(ob) {
     return arr.toString();
 }
 var orm = {
-    all: function (tableinput, cb) {
+    all: function(tableinput, cb) {
         var queryString = "SELECT * FROM " + tableinput + ";";
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, function(err, result) {
 
             if (err) {
                 throw err;
@@ -42,7 +43,7 @@ var orm = {
         });
     },
 
-    create: function (tableInput, cols, vals, cb) {
+    create: function(tableInput, cols, vals, cb) {
         var queryString = "INSERT INTO " + tableInput;
         queryString += "(";
         queryString += cols.toString();
@@ -51,7 +52,7 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ")";
         console.log(queryString);
-        connection.query(queryString, vals, function (err, result) {
+        connection.query(queryString, vals, function(err, result) {
                 if (err) {
                     throw err;
                 }
@@ -60,7 +61,7 @@ var orm = {
             });
     },
 
-    update: function (table, objColVals, condition, cb) {
+    update: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -69,7 +70,7 @@ var orm = {
         queryString += condition;
 
         console.log(queryString);
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
             }

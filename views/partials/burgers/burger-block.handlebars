@@ -1,14 +1,12 @@
 {{#if devoured}}
 
-    {{burger_name}}
+    {{id}}. {{burger_name}}
     
 
 {{else}}
 
-
-
-    {{burger_name}}
-    <button class="Devour it!" data-id="{{this.id}}">Not Devoure!</button>
+    {{id}}. {{burger_name}}
+    <button class="Devour it!" data-id="{{this.id}}">Devoure!</button>
 
 
 {{/if}}

@@ -1,11 +1,11 @@
 $(function () {
 
-    $(".Devour").on("click", function (event) {
+    $(".Devour").on("click", function(event) {
         var id = $(this).data("id");
         //var Devoured = $(this).data("Devoured");
 
         var newBurgerState = {
-            Devoured: true
+            devoured: true
 
         };
 
@@ -20,14 +20,14 @@ $(function () {
     });
 
 
-    $(".create-form").on("submit", function (event) {
+    $(".create-form").on("submit", function(event) {
         event.preventDefault();
             var burgName = $("#ba").val().trim();
             console.log("The burger to insert is :"+burgName);
         var newBurger = {
 
             burger_name: burgName,
-            devoured:false
+           // devoured: false
 
         };
         console.log(newBurger);
