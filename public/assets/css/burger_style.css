@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body{
   background-color: bisque;
 }
@@ -32,13 +35,45 @@ li {
 }
 
 #BURG{
-margin: 20px;
-width:300px;
-height:300px;
+  margin-right:20px;  
+ /* float: left;*/
+  border:solid;
+  width:250px;
+  height:250px;
+  margin:40px;
 }
-.center {
+#image {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 30px;
   width: 60%;
+  padding:20px;
+}
+h1{
+  background-color:goldenrod;
+  color:white;
+  font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
+  text-align: center;
+  border-width: 2px;
+  width:100%;
+  padding:5px;
+  font-style:italic;
+  float:left;
+}
+
+h3{
+  background-color:goldenrod;
+  color:white;
+  font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
+  text-align: center;
+  border-width: 2px;
+  width:calc(100/3%);
+  padding:5px;
+  font-style:italic;
+  float:left;
+}
+
+p{
+  float:left;
+  font-size:12px;
+  line-height:250%
 }

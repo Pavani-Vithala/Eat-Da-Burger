@@ -1,6 +1,11 @@
-<h1>Burgers</h1>
+<h1>Eat Da Burger!</h1>
+<br>
+<div id ="image">
 <img src = "/assets/img/burger.png" alt="Burger" class="center" id ="BURG">
-<h2>Burgers that are not devoured</h2>
+</div>
+<br><br>
+
+<h3>Burgers that are not devoured</h3>
 
 <ul id = "noDevoured">
     {{#each burger}}
@@ -10,7 +15,7 @@
     {{/each}}
 </ul>
 
-<h2> Burgers that are Devoured</h2>
+<h3> Burgers that are Devoured</h3>
 
 
 <ul id = "Devoured">
@@ -21,13 +26,14 @@
     {{/each}}
 </ul>
 
-<h2>Add a burger</h2>
+<h3>Add a burger</h3>
 
 <form class="create-form">
 
     <div class="form-group">
         <label for="ba">Burger Name:</label>
         <input type="text" id="ba" name="name">
+        <p>Type a burger Name and click submit</p>
     </div>
 
     <button type="submit">Add Burger</button>
