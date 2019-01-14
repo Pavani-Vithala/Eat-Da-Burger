@@ -1,13 +1,12 @@
-* {
-  box-sizing: border-box;
-}
+
 body{
   background-color: bisque;
 }
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    width:calc(100/3%);
+    
   }
   
   .label {
@@ -18,14 +17,15 @@ li {
     padding: 5px;
     margin: 5px;
     background: aqua;
+
   }
   
   .form-group {
-    margin-bottom: 5px;
-    float : left
+    width:calc(100/4%);
+    float : left;
   }
 
- #notDevoured{
+ #noDevoured{
    float: left;
    padding: 20px;
  }
@@ -34,19 +34,14 @@ li {
   padding: 20px;
 }
 
-#BURG{
-  margin-right:20px;  
- /* float: left;*/
-  border:solid;
-  width:250px;
-  height:250px;
-  margin:40px;
-}
-#image {
+
+#BURG {
   display: block;
-  margin-left: 30px;
+  margin-left: 60px;
   width: 60%;
   padding:20px;
+  width:250px;
+  height:250px;
 }
 h1{
   background-color:goldenrod;
@@ -73,7 +68,7 @@ h3{
 }
 
 p{
-  float:left;
+ 
   font-size:12px;
   line-height:250%
 }
