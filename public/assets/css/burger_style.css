@@ -9,7 +9,7 @@ body{
   }
   
   .create-update-form {
-    padding: 5px;
+   
     
     background: aqua;
 
@@ -18,34 +18,33 @@ body{
   .form-group {
     /*width:calc(100/3%);*/
     float : left;
-
+    padding: 10px;
    
   }
 
  #noDevoured{
    float : left;
-   padding: 5px;
-   float:left;
-   position : absolute;
+   padding: 10px;
+   
  }
  #Devoured{
  
-  padding: 5px;
-  float:right;
+  padding: 30px;
+  float:left;
 }
 
 
 #BURG {
-  display: block;
+ /* display: block;
   margin-left: 60px;
-  width: 60%;
+  width: 60%;*/
   padding:20px;
   width:250px;
   height:250px;
 }
 h1{
   background-color:goldenrod;
-  color:white;
+  color:black;
   font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
   text-align: center;
   border-width: 2px;
@@ -57,30 +56,41 @@ h1{
 
 h3{
   background-color:goldenrod;
-  color:white;
+  color:black;
   font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
   text-align: center;
   border-width: 2px;
-  width:calc(100/3%);
+  width:100%;
   padding:5px;
   font-style:italic;
   float:left;
 }
 
-h4{
-  background-color:goldenrod;
-  color:white;
-  font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
-  text-align: center;
-  border-width: 2px;
-  width:calc(100/3%);
-  padding:5px;
-  font-style:italic;
-  float:right;
+button{
+  
+  height:30px; 
+  width:100px; 
+ 
+  /*top:60%; */
+  left:30%;
+  position:relative;
+   
+  margin:5px;
 }
 
 p{
  
   font-size:12px;
-  line-height:250%
+  line-height:250%;
+}
+div{
+  text-align:left;
+  width:100%;
+}
+ul{
+
+  float:left;
+  width: 100%;
+
+
 }
