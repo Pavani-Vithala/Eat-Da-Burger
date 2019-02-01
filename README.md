@@ -7,4 +7,8 @@ The functionality of this app is as belows.
 3. When the Devoure it button is clicked, the burger moved to the Devoured burgers list
 4. User will have an option to Add new burgers by tying in the text box and cliking the Add Burger button.
 As soon as a new burger is submitted, it gets displayed in the non devoured section with a Devoure it option.
+The app can be accessed through the link below
 
+https://evening-sea-46093.herokuapp.com/
+
+For any queries, I can be reached on pavani.vithala18@gmail.com
